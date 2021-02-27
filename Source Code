@@ -1,0 +1,166 @@
+Public Class FastFood
+    Dim sandwich As Decimal
+    Dim burger As Decimal
+    Dim pizza As Decimal
+    Dim fries As Decimal
+    Dim hotdog As Decimal
+    Dim popcorn As Decimal
+    Dim water As Decimal
+    Dim coffee As Decimal
+    Dim total As String
+
+
+
+    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
+
+    Private Sub Label1_Click(sender As Object, e As EventArgs) Handles lblheader.Click
+
+    End Sub
+
+    Private Sub lblburger_Click(sender As Object, e As EventArgs) Handles lblburger.Click
+
+    End Sub
+
+    Private Sub btnsandwichminus_Click(sender As Object, e As EventArgs) Handles btnsandwichminus.Click
+        txtboxsandwich.Text -= 1
+        If txtboxsandwich.Text <= 0 Then
+            txtboxsandwich.Text = 0
+
+        End If
+
+    End Sub
+
+    Private Sub btnsandwichplus_Click(sender As Object, e As EventArgs) Handles btnsandwichplus.Click
+        txtboxsandwich.Text += 1
+    End Sub
+
+    Private Sub btnburgerplus_Click(sender As Object, e As EventArgs) Handles btnburgerplus.Click
+        txtboxburger.Text += 1
+    End Sub
+
+    Private Sub btnburgerminus_Click(sender As Object, e As EventArgs) Handles btnburgerminus.Click
+        txtboxburger.Text -= 1
+        If txtboxburger.Text <= 0 Then
+            txtboxburger.Text = 0
+
+        End If
+
+    End Sub
+
+    Private Sub btnpizzaplus_Click(sender As Object, e As EventArgs) Handles btnpizzaplus.Click
+        txtboxpizza.Text += 1
+    End Sub
+
+    Private Sub btnpizzaminus_Click(sender As Object, e As EventArgs) Handles btnpizzaminus.Click
+        txtboxpizza.Text -= 1
+        If txtboxpizza.Text <= 0 Then
+            txtboxpizza.Text = 0
+
+        End If
+    End Sub
+
+    Private Sub btnfriesplus_Click(sender As Object, e As EventArgs) Handles btnfriesplus.Click
+        txtboxfries.Text += 1
+    End Sub
+
+    Private Sub btnfriesminus_Click(sender As Object, e As EventArgs) Handles btnfriesminus.Click
+        txtboxfries.Text -= 1
+        If txtboxfries.Text <= 0 Then
+            txtboxfries.Text = 0
+        End If
+    End Sub
+
+    Private Sub btnhotdogplus_Click(sender As Object, e As EventArgs) Handles btnhotdogplus.Click
+        txtboxhotdog.Text += 1
+    End Sub
+
+    Private Sub btnhotdogminus_Click(sender As Object, e As EventArgs) Handles btnhotdogminus.Click
+        txtboxhotdog.Text -= 1
+        If txtboxhotdog.Text <= 0 Then
+            txtboxhotdog.Text = 0
+        End If
+    End Sub
+
+    Private Sub btnpopcornplus_Click(sender As Object, e As EventArgs) Handles btnpopcornplus.Click
+        txtboxpopcorn.Text += 1
+    End Sub
+
+    Private Sub btnpopcornminus_Click(sender As Object, e As EventArgs) Handles btnpopcornminus.Click
+        txtboxpopcorn.Text -= 1
+        If txtboxpopcorn.Text <= 0 Then
+            txtboxpopcorn.Text = 0
+        End If
+    End Sub
+
+    Private Sub btnwaterplus_Click(sender As Object, e As EventArgs) Handles btnwaterplus.Click
+        txtboxwater.Text += 1
+    End Sub
+
+    Private Sub btnwaterminus_Click(sender As Object, e As EventArgs) Handles btnwaterminus.Click
+        txtboxwater.Text -= 1
+        If txtboxwater.Text <= 0 Then
+            txtboxwater.Text = 0
+        End If
+    End Sub
+
+    Private Sub btncoffeeplus_Click(sender As Object, e As EventArgs) Handles btncoffeeplus.Click
+        txtboxcoffee.Text += 1
+    End Sub
+
+    Private Sub btncoffeeminus_Click(sender As Object, e As EventArgs) Handles btncoffeeminus.Click
+        txtboxcoffee.Text -= 1
+        If txtboxcoffee.Text <= 0 Then
+            txtboxcoffee.Text = 0
+        End If
+    End Sub
+
+    Private Sub btnplace_Click(sender As Object, e As EventArgs) Handles btnplace.Click
+        sandwich = txtboxsandwich.Text * 3000
+        burger = txtboxburger.Text * 4500
+        pizza = txtboxpizza.Text * 6000
+        fries = txtboxfries.Text * 2000
+        hotdog = txtboxhotdog.Text * 5000
+        popcorn = txtboxpopcorn.Text * 1000
+        water = txtboxwater.Text * 500
+        coffee = txtboxcoffee.Text * 1000
+        txtboxtotal.Text = Format(sandwich + burger + pizza + fries + hotdog + popcorn + water + coffee, "0") & " IQD"
+
+    End Sub
+
+    Private Sub btnclear_Click(sender As Object, e As EventArgs) Handles btnclear.Click
+        txtboxsandwich.Text = 0
+        txtboxburger.Text = 0
+        txtboxpizza.Text = 0
+        txtboxfries.Text = 0
+        txtboxhotdog.Text = 0
+        txtboxpopcorn.Text = 0
+        txtboxwater.Text = 0
+        txtboxcoffee.Text = 0
+        txtboxtotal.Text = 0
+
+        sandwich = 0
+        burger = 0
+        pizza = 0
+        fries = 0
+        hotdog = 0
+        popcorn = 0
+        water = 0
+        coffee = 0
+        total = 0
+    End Sub
+
+    Private Sub btnreceipt_Click(sender As Object, e As EventArgs) Handles btnreceipt.Click
+        total = txtboxtotal.Text
+
+        MessageBox.Show("Sandwiches: " & sandwich & " IQD" & vbCrLf & "Burgers: " & burger & " IQD" & vbCrLf & "Pizzas: " & pizza & " IQD" &
+                        vbCrLf & "Fries: " & fries & " IQD" & vbCrLf & "HotDogs: " & hotdog & " IQD" & vbCrLf & "Popcorns: " & popcorn & " IQD" &
+                        vbCrLf & "Water: " & water & " IQD" & vbCrLf & "Coffee: " & coffee & " IQD" & vbCrLf & "Total Costs: " & total,
+                         "Receipt", MessageBoxButtons.OK, MessageBoxIcon.Information)
+    End Sub
+
+    Private Sub ToolTip1_Popup(sender As Object, e As PopupEventArgs) Handles tlttip.Popup
+
+    End Sub
+End Class
